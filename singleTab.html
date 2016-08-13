@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>纯CSS实现双层tab</title>
+    <style >
+      .container{
+        background-color: #2cb0a2;
+        height: 300px;
+        width: 500px;
+        margin: 50px auto;
+        padding: 30px;
+        color: white;
+        border-radius: 10px;
+        box-shadow: 10px 30px 20px #ccc;
+      }
+      .tab-container{
+        position: relative;
+      }
+      .tab-radio{
+        display: none;
+      }
+      .tab-lable{
+        display: inline-block;
+        height: 50px;
+        width: 100px;
+        line-height: 50px;
+        margin:0;
+        text-align: center;
+        background-color: rgba(255,255,255,0.5);
+      }
+      .content{
+        position: absolute;
+        visibility: hidden;
+        top: 40px;
+        left: 0;
+        width: 435px;
+        padding: 30px;
+        color: white;
+        font-size: 14px;
+        background-color: rgba(255,255,255,0.5);
+        transition: transform .5s, opacity .7s;
+        transform: translateY(20px);
+      }
+      .tab-radio:checked + .tab-lable + .content{
+        visibility: visible;
+      }
+      .tab-radio:checked + .tab-lable{
+        background-color: rgba(255,255,255,0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="tab-container">
+        <input type="radio" name="name" value="" id="tab-btn-1" class="tab-radio" checked="checked"/>
+        <label for="tab-btn-1" class="tab-lable">tab1</label>
+        <div class="content">
+          我是第一个tab
+        </div>
+
+        <input type="radio" name="name" value="" id="tab-btn-2" class="tab-radio"/>
+        <label for="tab-btn-2" class="tab-lable">tab2</label>
+        <div class="content">
+          我是第二个tab
+        </div>
+
+        <input type="radio" name="name" value="" id="tab-btn-3" class="tab-radio"/>
+        <label for="tab-btn-3" class="tab-lable">tab3</label>
+        <div class="content">
+          我是第三个tab
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
