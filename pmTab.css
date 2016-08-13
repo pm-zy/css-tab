@@ -1,0 +1,52 @@
+.container{
+  background-color: #2cb0a2;
+  height: 300px;
+  width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 10px 30px 20px #ccc;
+}
+.tab-container{
+  position: relative;
+}
+.tab-radio, .tab-sm-radio{
+  display: none;
+}
+.tab-lable, .tab-sm-lable{
+  display: inline-block;
+  height: 50px;
+  width: 100px;
+  line-height: 50px;
+  margin:0;
+  text-align: center;
+  background-color: rgba(255,255,255,0.5);
+}
+ .tab-sm-lable{
+   color: #666;
+ }
+.content, .sm-content{
+  position: absolute;
+  /*visibility: hidden;*/
+  display: none;
+  top: 40px;
+  left: 0;
+  width: 435px;
+  padding: 30px;
+  color: white;
+  font-size: 14px;
+  background-color: rgba(255,255,255,0.5);
+  transition: transform .5s, opacity .7s;
+  transform: translateY(20px);
+}
+.sm-content{
+  top: 90px;
+}
+.tab-radio:checked + .tab-lable + .content, .tab-sm-radio:checked + .tab-sm-lable + .sm-content{
+  /*visibility: visible;*/
+  display: block;
+}
+.tab-radio:checked + .tab-lable, .tab-sm-radio:checked + .tab-sm-lable{
+  background-color: rgba(255,255,255,0.3);
+}
